@@ -14,28 +14,27 @@ public class ConsoleInterface implements UserInterface {
 		String currentLine = in.nextLine();
 		List<String> input = new ArrayList<>();
 		while (!currentLine.equals("End"))
-        {
-            if (currentLine.equals("") || currentLine.startsWith("//"))
-            {
-                currentLine = in.nextLine();
-                continue;
-            }
-
-            //TO DO: Fix yield
-            input.add(currentLine);
-            currentLine = in.nextLine();
-        }
+	        {
+	            if (currentLine.equals("") || currentLine.startsWith("//"))
+	            {
+	                currentLine = in.nextLine();
+	                continue;
+	            }
+	
+	            input.add(currentLine);
+	            currentLine = in.nextLine();
+	        }
 		return input;
 	}
 
 	@Override
 	public void output(Iterable<String> output) {
 		StringBuilder result = new StringBuilder();
-        for (String line : output) {
-            result.append(line.trim() + "\n");
-        }
+	        for (String line : output) {
+	            result.append(line.trim() + "\n");
+	        }
 
-        System.out.println(result.toString().trim());
+        	System.out.println(result.toString().trim());
 	}
 
 }
